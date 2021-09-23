@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>0.2.0</PackageVersion>
+    <PackageVersion>0.3.0</PackageVersion>
     <Authors>Robin Nunkesser</Authors>
     <PackageLicenseUrl>https://github.com/Italbytz/networks-exam-nuget/blob/main/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Italbytz/networks-exam-nuget</PackageProjectUrl>
@@ -14,12 +14,16 @@
     <None Remove="Bitencodings\" />
     <None Remove="RandomExtensions" />
     <None Remove="ExamPorts" />
+    <None Remove="MinimumSpanningTree\" />
+    <None Remove="QuikGraph" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Bitencodings\" />
+    <Folder Include="MinimumSpanningTree\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="RandomExtensions" Version="0.1.0" />
     <PackageReference Include="ExamPorts" Version="0.4.0" />
+    <PackageReference Include="QuikGraph" Version="2.3.0" />
   </ItemGroup>
 </Project>
