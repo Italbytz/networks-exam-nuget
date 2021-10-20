@@ -1,8 +1,7 @@
 ﻿using System;
-using NetworksExam.CRC;
 using NUnit.Framework;
 
-namespace NetworksExam.Tests
+namespace Italbytz.Adapters.Exam.Networks.Tests
 {
     public class CRCTests
     {

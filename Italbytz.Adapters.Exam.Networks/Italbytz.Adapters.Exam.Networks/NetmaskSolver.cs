@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
-using ExamPorts;
+using Italbytz.Ports.Exam;
 using Knom.Helpers.Net;
 
-namespace NetworksExam.Netmask
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class NetmaskSolver : ISolver<NetmaskParameters, NetmaskSolution>
     {

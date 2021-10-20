@@ -1,5 +1,5 @@
 ﻿using System;
-namespace NetworksExam.Bitencodings
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class BitencodingSolution
     {

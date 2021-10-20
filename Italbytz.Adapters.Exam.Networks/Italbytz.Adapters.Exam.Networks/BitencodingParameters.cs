@@ -1,7 +1,7 @@
 ﻿using System;
-using RandomExtensions;
+using Italbytz.Extensions;
 
-namespace NetworksExam.Bitencodings
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class BitencodingParameters
     {

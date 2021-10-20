@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace NetworksExam.Netmask
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class NetmaskSolution
     {

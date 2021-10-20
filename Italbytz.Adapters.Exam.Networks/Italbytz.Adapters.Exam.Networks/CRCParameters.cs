@@ -1,5 +1,5 @@
 ﻿using System;
-namespace NetworksExam.CRC
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class CRCParameters
     {

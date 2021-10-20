@@ -1,7 +1,6 @@
-﻿using NetworksExam.Bitencodings;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
-namespace NetworksExam.Tests
+namespace Italbytz.Adapters.Exam.Networks.Tests
 {
     public class BitencodingsTests
     {

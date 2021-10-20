@@ -1,44 +1,42 @@
 ﻿using System;
+using Italbytz.Extensions;
 using QuikGraph;
-using RandomExtensions;
 
-namespace NetworksExam.ShortestPaths
+namespace Italbytz.Adapters.Exam.Networks
 {
-    public class ShortestPathsParameters
+    public class MinimumSpanningTreeParameters
     {
         readonly Random _random = new Random();
         public UndirectedGraph<string, TaggedEdge<string, double>> Graph { get; set; }
-        public String[] Vertices { get; set; }
 
-        public ShortestPathsParameters()
+        public MinimumSpanningTreeParameters()
         {
-            Vertices = new string[] { "A", "B", "C", "D", "E", "F", "G", "H" };
             Graph = CreateRandomGraph();
         }
 
         private UndirectedGraph<string, TaggedEdge<string, double>> CreateRandomGraph()
         {
             var graph = new UndirectedGraph<string, TaggedEdge<string, double>>();
-            var shuffledVertices = _random.ShuffledStrings(Vertices);
-            var weights = new double[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var vertices = new string[] { "A", "B", "C", "D", "E", "F" };
+            var shuffledVertices = _random.ShuffledStrings(vertices);
+            var weights = new double[] { 2, 4, 19, 62, 100, 250 };
             for (int i = 0; i < shuffledVertices.Length - 1; i++)
             {
                 graph.AddVerticesAndEdge(new TaggedEdge<string, double>(shuffledVertices[i], shuffledVertices[i + 1], _random.RandomElement<double>(weights)));
             }
 
             var rnd = new Random();
-            for (int i = 0; i < rnd.Next(5, 10); i++)
+            for (int i = 0; i < rnd.Next(3, 6); i++)
             {
                 string vertex1, vertex2;
                 do
                 {
-                    vertex1 = _random.RandomElement<string>(Vertices);
-                    vertex2 = _random.RandomElement<string>(Vertices);
+                    vertex1 = _random.RandomElement<string>(vertices);
+                    vertex2 = _random.RandomElement<string>(vertices);
                 } while (graph.ContainsEdge(vertex1, vertex2) || vertex1.Equals(vertex2));
                 graph.AddVerticesAndEdge(new TaggedEdge<string, double>(vertex1, vertex2, _random.RandomElement<double>(weights)));
 
             }
-
             return graph;
         }
     }

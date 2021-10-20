@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using ExamPorts;
+using Italbytz.Ports.Exam;
 
-namespace NetworksExam.Bitencodings
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class BitencodingSolver : ISolver<BitencodingParameters, BitencodingSolution>
     {

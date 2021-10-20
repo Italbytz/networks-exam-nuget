@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using QuikGraph;
 
-namespace NetworksExam.MinimumSpanningTree
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class MinimumSpanningTreeSolution
     {

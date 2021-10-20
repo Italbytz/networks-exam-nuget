@@ -1,7 +1,7 @@
 ﻿using System;
-using ExamPorts;
+using Italbytz.Ports.Exam;
 
-namespace NetworksExam.Bitencodings
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class BitencodingsTask : ITask
     {

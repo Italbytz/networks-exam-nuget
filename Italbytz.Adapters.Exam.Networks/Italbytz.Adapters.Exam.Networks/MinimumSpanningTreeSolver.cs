@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using ExamPorts;
+using Italbytz.Ports.Exam;
 using QuikGraph;
 using QuikGraph.Algorithms;
 
-namespace NetworksExam.MinimumSpanningTree
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class MinimumSpanningTreeSolver : ISolver<MinimumSpanningTreeParameters, MinimumSpanningTreeSolution>
     {

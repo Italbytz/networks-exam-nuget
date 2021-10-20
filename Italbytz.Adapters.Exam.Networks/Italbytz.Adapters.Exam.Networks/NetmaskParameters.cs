@@ -1,7 +1,7 @@
 ﻿using System;
-using RandomExtensions;
+using Italbytz.Extensions;
 
-namespace NetworksExam.Netmask
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class NetmaskParameters
     {

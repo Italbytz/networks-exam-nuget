@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using QuikGraph;
 
-namespace NetworksExam.ShortestPaths
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class ShortestPathsSolution
     {

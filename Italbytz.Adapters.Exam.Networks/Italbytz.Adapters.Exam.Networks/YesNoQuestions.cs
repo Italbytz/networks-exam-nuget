@@ -1,7 +1,7 @@
 ﻿using System;
-using TriviaPorts;
+using Italbytz.Ports.Trivia;
 
-namespace NetworksExam.Quiz
+namespace Italbytz.Adapters.Exam.Networks
 {
     public static class YesNoQuestions
     {

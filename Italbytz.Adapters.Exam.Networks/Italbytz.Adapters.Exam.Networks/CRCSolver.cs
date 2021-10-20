@@ -1,7 +1,7 @@
 ﻿using System;
-using ExamPorts;
+using Italbytz.Ports.Exam;
 
-namespace NetworksExam.CRC
+namespace Italbytz.Adapters.Exam.Networks
 {
     public class CRCSolver : ISolver<CRCParameters, CRCSolution>
     {

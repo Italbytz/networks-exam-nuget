@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.11
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Italbytz.Adapters.Exam.Networks", "Italbytz.Adapters.Exam.Networks\Italbytz.Adapters.Exam.Networks.csproj", "{E4D6A855-7E13-4D93-9A93-8F2F92F60E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Italbytz.Adapters.Exam.Networks.Tests", "Italbytz.Adapters.Exam.Networks.Tests\Italbytz.Adapters.Exam.Networks.Tests.csproj", "{263AF5C9-7441-45AE-8C68-25F5EB34AC05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4D6A855-7E13-4D93-9A93-8F2F92F60E3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4D6A855-7E13-4D93-9A93-8F2F92F60E3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4D6A855-7E13-4D93-9A93-8F2F92F60E3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4D6A855-7E13-4D93-9A93-8F2F92F60E3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{263AF5C9-7441-45AE-8C68-25F5EB34AC05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263AF5C9-7441-45AE-8C68-25F5EB34AC05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263AF5C9-7441-45AE-8C68-25F5EB34AC05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263AF5C9-7441-45AE-8C68-25F5EB34AC05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {427C5D9D-A5E0-4D74-A022-AF3354E39A4D}
+	EndGlobalSection
+EndGlobal
