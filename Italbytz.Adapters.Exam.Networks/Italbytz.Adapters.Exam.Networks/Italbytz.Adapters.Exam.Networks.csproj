@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>0.5.1</PackageVersion>
+    <PackageVersion>0.5.2</PackageVersion>
     <Authors>Robin Nunkesser</Authors>
     <PackageLicenseUrl>https://github.com/Italbytz/nuget-adapters-exam-networks/blob/main/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Italbytz/nuget-adapters-exam-networks</PackageProjectUrl>
@@ -15,11 +15,27 @@
     <None Remove="QuikGraph" />
     <None Remove="Italbytz.Extensions.Random" />
     <None Remove="Italbytz.Ports.Trivia" />
+    <None Remove="Italbytz.Infrastructure.Exam.Networks" />
+    <None Remove="Bitencodings\" />
+    <None Remove="CRC\" />
+    <None Remove="MinimumSpanningTree\" />
+    <None Remove="Netmask\" />
+    <None Remove="ShortestPaths\" />
+    <None Remove="Quiz\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Italbytz.Ports.Exam.Networks" Version="0.0.1" />
     <PackageReference Include="QuikGraph" Version="2.3.0" />
     <PackageReference Include="Italbytz.Extensions.Random" Version="0.1.1" />
     <PackageReference Include="Italbytz.Ports.Trivia" Version="0.1.2" />
+    <PackageReference Include="Italbytz.Infrastructure.Exam.Networks" Version="0.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Bitencodings\" />
+    <Folder Include="CRC\" />
+    <Folder Include="MinimumSpanningTree\" />
+    <Folder Include="Netmask\" />
+    <Folder Include="ShortestPaths\" />
+    <Folder Include="Quiz\" />
   </ItemGroup>
 </Project>
