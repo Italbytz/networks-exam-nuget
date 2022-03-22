@@ -1,9 +1,10 @@
 ﻿using System;
 using Italbytz.Extensions;
+using Italbytz.Ports.Exam.Networks;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class BitencodingParameters
+    public class BitencodingParameters : IBitencodingParameters
     {
         public int[] Bits { get; set; }
 

@@ -1,7 +1,9 @@
 ﻿using System;
+using Italbytz.Ports.Exam.Networks;
+
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class CRCParameters
+    public class CRCParameters : ICRCParameters
     {
         public byte Term { get; set; }
 

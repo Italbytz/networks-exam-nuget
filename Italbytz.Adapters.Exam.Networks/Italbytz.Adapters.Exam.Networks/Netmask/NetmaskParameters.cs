@@ -1,9 +1,10 @@
 ﻿using System;
 using Italbytz.Extensions;
+using Italbytz.Ports.Exam.Networks;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class NetmaskParameters
+    public class NetmaskParameters : INetmaskParameters
     {
         public int PrefixLength { get; set; }
         public string Address { get; set; }

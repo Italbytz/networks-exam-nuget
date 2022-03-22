@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Italbytz.Ports.Exam;
+using Italbytz.Ports.Exam.Networks;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class BitencodingSolver : ISolver<BitencodingParameters, BitencodingSolution>
+    public class BitencodingSolver : IBitencodingSolver
     {
         private int[] Bits;
 
@@ -86,7 +87,7 @@ namespace Italbytz.Adapters.Exam.Networks
             return result.ToArray();
         }
 
-        public BitencodingSolution Solve(BitencodingParameters parameters)
+        public IBitencodingSolution Solve(IBitencodingParameters parameters)
         {
             Bits = parameters.Bits;
             return new BitencodingSolution()

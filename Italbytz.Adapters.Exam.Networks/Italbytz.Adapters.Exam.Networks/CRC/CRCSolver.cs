@@ -1,15 +1,16 @@
 ﻿using System;
 using Italbytz.Ports.Exam;
+using Italbytz.Ports.Exam.Networks;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class CRCSolver : ISolver<CRCParameters, CRCSolution>
+    public class CRCSolver : ICRCSolver
     {
         public CRCSolver()
         {
         }
 
-        public CRCSolution Solve(CRCParameters parameters)
+        public ICRCSolution Solve(ICRCParameters parameters)
         {
             var crc = CRC5(parameters.Term, 0x0);
             var crcTest = CRC5(parameters.Term, crc.Item2);

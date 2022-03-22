@@ -1,7 +1,9 @@
 ﻿using System;
+using Italbytz.Ports.Exam.Networks;
+
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class BitencodingSolution
+    public class BitencodingSolution : IBitencodingSolution
     {
         public string[] NRZ { get; set; }
         public string[] NRZI { get; set; }
