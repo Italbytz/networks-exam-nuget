@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using Italbytz.Ports.Exam.Networks;
 using QuikGraph;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class MinimumSpanningTreeSolution
+    public class MinimumSpanningTreeSolution : IMinimumSpanningTreeSolution
     {
         public MinimumSpanningTreeSolution()
         {
         }
 
-        public IEnumerable<TaggedEdge<string, double>> Edges { get; internal set; }
+        public IEnumerable<Ports.Exam.Networks.ITagged<string>> Edges { get; set; }
     }
 }

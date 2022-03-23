@@ -1,28 +1,32 @@
 ﻿using System;
 using Italbytz.Extensions;
+using Italbytz.Ports.Exam.Networks;
 using QuikGraph;
+using Italbytz.Adapters.Exam.Networks.Graph;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
-    public class MinimumSpanningTreeParameters
+    public class MinimumSpanningTreeParameters : IMinimumSpanningTreeParameters
     {
         readonly Random _random = new Random();
-        public UndirectedGraph<string, TaggedEdge<string, double>> Graph { get; set; }
+
+        public Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> Graph { get; set; }
 
         public MinimumSpanningTreeParameters()
         {
-            Graph = CreateRandomGraph();
+            var graph = CreateRandomGraph();
+            Graph = (Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>>)graph.ToGenericGraph();
         }
-
-        private UndirectedGraph<string, TaggedEdge<string, double>> CreateRandomGraph()
+    
+        private QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> CreateRandomGraph()
         {
-            var graph = new UndirectedGraph<string, TaggedEdge<string, double>>();
+            var graph = new QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>>();
             var vertices = new string[] { "A", "B", "C", "D", "E", "F" };
             var shuffledVertices = _random.ShuffledStrings(vertices);
             var weights = new double[] { 2, 4, 19, 62, 100, 250 };
             for (int i = 0; i < shuffledVertices.Length - 1; i++)
             {
-                graph.AddVerticesAndEdge(new TaggedEdge<string, double>(shuffledVertices[i], shuffledVertices[i + 1], _random.RandomElement<double>(weights)));
+                graph.AddVerticesAndEdge(new QuikGraph.TaggedEdge<string, double>(shuffledVertices[i], shuffledVertices[i + 1], _random.RandomElement<double>(weights)));
             }
 
             var rnd = new Random();
@@ -34,7 +38,7 @@ namespace Italbytz.Adapters.Exam.Networks
                     vertex1 = _random.RandomElement<string>(vertices);
                     vertex2 = _random.RandomElement<string>(vertices);
                 } while (graph.ContainsEdge(vertex1, vertex2) || vertex1.Equals(vertex2));
-                graph.AddVerticesAndEdge(new TaggedEdge<string, double>(vertex1, vertex2, _random.RandomElement<double>(weights)));
+                graph.AddVerticesAndEdge(new QuikGraph.TaggedEdge<string, double>(vertex1, vertex2, _random.RandomElement<double>(weights)));
 
             }
             return graph;
