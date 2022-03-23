@@ -11,6 +11,6 @@ namespace Italbytz.Adapters.Exam.Networks
         {
         }
 
-        public IEnumerable<Ports.Exam.Networks.ITagged<string>> Edges { get; set; }
+        public IEnumerable<ITaggedEdge<string, double>> Edges { get; set; }
     }
 }

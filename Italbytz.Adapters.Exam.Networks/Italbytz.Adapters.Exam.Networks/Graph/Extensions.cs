@@ -20,7 +20,7 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
             return quikgraph;
         }
 
-        public static TaggedEdge<string, double> ToGenericEdge(this QuikGraph.TaggedEdge<string, double> edge)
+        public static ITaggedEdge<string, double> ToGenericEdge(this QuikGraph.TaggedEdge<string, double> edge)
             => new TaggedEdge<string, double>(edge.Source, edge.Target, edge.Tag);
 
         public static QuikGraph.TaggedEdge<string, double> ToQuikEdge(this ITaggedEdge<string, double> edge)

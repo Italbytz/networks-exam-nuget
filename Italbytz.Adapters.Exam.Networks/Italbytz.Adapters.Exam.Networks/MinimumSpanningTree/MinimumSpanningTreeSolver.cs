@@ -21,7 +21,7 @@ namespace Italbytz.Adapters.Exam.Networks
             IEnumerable<QuikGraph.TaggedEdge<string, double>> minimumSpanningTree = graph.MinimumSpanningTreePrim((edge) => edge.Tag);
             return new MinimumSpanningTreeSolution
             {
-                Edges = (IEnumerable<Ports.Exam.Networks.ITagged<string>>)minimumSpanningTree.Select(edge => edge.ToGenericEdge())
+                Edges = minimumSpanningTree.Select(edge => edge.ToGenericEdge())
             };
         }
 
