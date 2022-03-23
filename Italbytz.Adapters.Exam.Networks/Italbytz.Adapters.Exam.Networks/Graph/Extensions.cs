@@ -6,10 +6,10 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
 {
     public static class Extensions
     {
-        public static Ports.Exam.Networks.IUndirectedGraph<string, TaggedEdge<string, double>> ToGenericGraph(this QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> graph)
+        public static Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> ToGenericGraph(this QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> graph)
         {
             var edges = graph.Edges.Select(edge => edge.ToGenericEdge()).ToList();
-            return new UndirectedGraph<string, TaggedEdge<string, double>>() { Edges = edges };
+            return new UndirectedGraph<string, ITaggedEdge<string, double>>() { Edges = edges };
         }
 
         public static QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> ToQuikGraph(this Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> graph)

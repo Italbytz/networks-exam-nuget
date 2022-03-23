@@ -15,7 +15,7 @@ namespace Italbytz.Adapters.Exam.Networks
         public MinimumSpanningTreeParameters()
         {
             var graph = CreateRandomGraph();
-            Graph = (Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>>)graph.ToGenericGraph();
+            Graph = graph.ToGenericGraph();
         }
     
         private QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> CreateRandomGraph()

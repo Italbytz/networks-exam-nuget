@@ -21,5 +21,10 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
         public TVertex Source { get; set; }
 
         public TVertex Target { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0} -> {1} ({2})", Source, Target, Tag?.ToString() ?? "no tag");
+        }
     }
 }
