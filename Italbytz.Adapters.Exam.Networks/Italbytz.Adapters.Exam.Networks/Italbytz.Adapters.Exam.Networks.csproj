@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <PackOnBuild>true</PackOnBuild>
-    <PackageVersion>0.8.0</PackageVersion>
+    <PackageVersion>0.8.1</PackageVersion>
     <Authors>Robin Nunkesser</Authors>
     <PackageLicenseUrl>https://github.com/Italbytz/nuget-adapters-exam-networks/blob/main/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Italbytz/nuget-adapters-exam-networks</PackageProjectUrl>
@@ -23,13 +23,15 @@
     <None Remove="ShortestPaths\" />
     <None Remove="Quiz\" />
     <None Remove="QuikGraph\" />
+    <None Remove="QuikGraph.Graphviz" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Italbytz.Ports.Exam.Networks" Version="0.0.5" />
+    <PackageReference Include="Italbytz.Ports.Exam.Networks" Version="0.1.0" />
     <PackageReference Include="QuikGraph" Version="2.3.0" />
     <PackageReference Include="Italbytz.Extensions.Random" Version="0.1.1" />
     <PackageReference Include="Italbytz.Ports.Trivia" Version="0.1.2" />
     <PackageReference Include="Italbytz.Infrastructure.Exam.Networks" Version="0.0.1" />
+    <PackageReference Include="QuikGraph.Graphviz" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Bitencodings\" />
