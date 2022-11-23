@@ -16,8 +16,12 @@ namespace Italbytz.Adapters.Exam.Networks.Tests
         [Test]
         public void TestSolverGivesSolution()
         {
-            var parameters = new MinimumSpanningTreeParameters();            
-            var solution = solver.Solve(parameters);            
+            var parameters = new MinimumSpanningTreeParameters();
+            var solution = solver.Solve(parameters);
+            foreach (var edge in solution.Edges)
+            {
+                System.Console.WriteLine(edge.ToString());
+            }
         }
     }
 }

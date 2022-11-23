@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Italbytz.Ports.Exam.Networks;
 
@@ -6,6 +7,12 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
 {
     public static class Extensions
     {
+        public static BasicGraphOnEdges<Microsoft.Msagl.Core.GraphAlgorithms.IEdge> ToBasicGraphOnEdges(this Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> graph)
+        {
+            var edges = graph.Edges.Select(edge => edge.ToWeightedEdge()).ToList();
+            return new BasicGraphOnEdges<Microsoft.Msagl.Core.GraphAlgorithms.IEdge>(edges);
+        }
+
         public static Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> ToGenericGraph(this QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> graph)
         {
             var edges = graph.Edges.Select(edge => edge.ToGenericEdge()).ToList();
@@ -20,11 +27,22 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
             return quikgraph;
         }
 
+        public static ITaggedEdge<string, double> ToGenericEdge(this WeightedEdge<double> edge)
+            => new TaggedEdge<string, double>(((char)edge.Source).ToString(), ((char)edge.Target).ToString(), edge.Weight);
+
         public static ITaggedEdge<string, double> ToGenericEdge(this QuikGraph.TaggedEdge<string, double> edge)
             => new TaggedEdge<string, double>(edge.Source, edge.Target, edge.Tag);
 
         public static QuikGraph.TaggedEdge<string, double> ToQuikEdge(this ITaggedEdge<string, double> edge)
             => new QuikGraph.TaggedEdge<string, double>(edge.Source, edge.Target, edge.Tag);
+
+        public static WeightedEdge<Double> ToWeightedEdge(this ITaggedEdge<string, double> edge) =>
+        new WeightedEdge<double>()
+        {
+            Source = (int)edge.Source.ToCharArray()[0],
+            Target = (int)edge.Target.ToCharArray()[0],
+            Weight = edge.Tag
+        };
 
     }
 }

@@ -6,6 +6,8 @@ using QuikGraph;
 using QuikGraph.Algorithms;
 using Italbytz.Adapters.Exam.Networks.Graph;
 using System.Linq;
+using QuikGraph.Algorithms.MinimumSpanningTree;
+using QuikGraph.Algorithms.Observers;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
@@ -17,13 +19,16 @@ namespace Italbytz.Adapters.Exam.Networks
 
         public IMinimumSpanningTreeSolution Solve(IMinimumSpanningTreeParameters parameters)
         {
-            var graph = parameters.Graph.ToQuikGraph();
-            IEnumerable<QuikGraph.TaggedEdge<string, double>> minimumSpanningTree = graph.MinimumSpanningTreePrim((edge) => edge.Tag);
+            var graph = parameters.Graph.ToBasicGraphOnEdges();
+            var mst = new MinimumSpanningTreeByPrim(graph, (edge) => ((WeightedEdge<double>)edge).Weight, graph.Edges.First().Source);
+            var solution = mst.GetTreeEdges();
+
             return new MinimumSpanningTreeSolution
             {
-                Edges = minimumSpanningTree.Select(edge => edge.ToGenericEdge())
+                Edges = solution.Select(edge => ((WeightedEdge<double>)edge).ToGenericEdge())
             };
         }
 
     }
+
 }
