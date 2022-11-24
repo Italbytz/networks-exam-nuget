@@ -3,6 +3,7 @@ using Italbytz.Extensions;
 using Italbytz.Ports.Exam.Networks;
 using QuikGraph;
 using Italbytz.Adapters.Exam.Networks.Graph;
+using Italbytz.Ports.Graph;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
@@ -10,14 +11,14 @@ namespace Italbytz.Adapters.Exam.Networks
     {
         readonly Random _random = new Random();
 
-        public Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> Graph { get; set; }
+        public Ports.Graph.IUndirectedGraph<string, ITaggedEdge<string, double>> Graph { get; set; }
 
         public MinimumSpanningTreeParameters()
         {
             var graph = CreateRandomGraph();
             Graph = graph.ToGenericGraph();
         }
-    
+
         private QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> CreateRandomGraph()
         {
             var graph = new QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>>();

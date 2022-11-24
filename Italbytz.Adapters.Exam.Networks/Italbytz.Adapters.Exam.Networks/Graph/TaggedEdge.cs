@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Italbytz.Ports.Exam.Networks;
+using Italbytz.Ports.Graph;
 
 namespace Italbytz.Adapters.Exam.Networks.Graph
 {

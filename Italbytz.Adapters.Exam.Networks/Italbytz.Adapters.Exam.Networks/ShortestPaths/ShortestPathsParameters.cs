@@ -3,13 +3,14 @@ using Italbytz.Extensions;
 using Italbytz.Ports.Exam.Networks;
 using Italbytz.Adapters.Exam.Networks.Graph;
 using QuikGraph;
+using Italbytz.Ports.Graph;
 
 namespace Italbytz.Adapters.Exam.Networks
 {
     public class ShortestPathsParameters : IShortestPathsParameters
     {
         readonly Random _random = new Random();
-        public Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> Graph { get; set; }
+        public Ports.Graph.IUndirectedGraph<string, ITaggedEdge<string, double>> Graph { get; set; }
         public String[] Vertices { get; set; }
 
         public ShortestPathsParameters()
