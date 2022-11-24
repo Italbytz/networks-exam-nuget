@@ -1,7 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography;
 using Italbytz.Ports.Exam.Networks;
+using Microsoft.Msagl.Core.Geometry;
+using Microsoft.Msagl.Core.Geometry.Curves;
+using Microsoft.Msagl.Core.Layout;
 
 namespace Italbytz.Adapters.Exam.Networks.Graph
 {
@@ -11,6 +17,34 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
         {
             var edges = graph.Edges.Select(edge => edge.ToWeightedEdge()).ToList();
             return new BasicGraphOnEdges<Microsoft.Msagl.Core.GraphAlgorithms.IEdge>(edges);
+        }
+
+        public static GeometryGraph ToGeometryGraph(this Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> graph,
+        double nodeSize = 30.0, double labelWidth = 60.0, double labelHeight = 30.0)
+        {
+            var geometryGraph = new GeometryGraph();
+            var nodes = new Dictionary<string, Node>();
+            foreach (var edge in graph.Edges)
+            {
+                if (!nodes.ContainsKey(edge.Source))
+                {
+                    nodes.Add(edge.Source, new Node(CurveFactory.CreateRectangle(nodeSize, nodeSize, new Point()), edge.Source));
+                }
+                if (!nodes.ContainsKey(edge.Target))
+                {
+                    nodes.Add(edge.Target, new Node(CurveFactory.CreateRectangle(nodeSize, nodeSize, new Point()), edge.Target));
+                }
+                geometryGraph.Edges.Add(new Edge(nodes[edge.Source], nodes[edge.Target])
+                {
+                    Label = new Microsoft.Msagl.Core.Layout.Label()
+                    {
+                        Width = labelWidth,
+                        Height = labelHeight
+                    }
+                });
+            }
+
+            return geometryGraph;
         }
 
         public static Ports.Exam.Networks.IUndirectedGraph<string, ITaggedEdge<string, double>> ToGenericGraph(this QuikGraph.UndirectedGraph<string, QuikGraph.TaggedEdge<string, double>> graph)

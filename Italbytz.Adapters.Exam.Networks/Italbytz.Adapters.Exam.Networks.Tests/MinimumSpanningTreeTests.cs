@@ -1,4 +1,5 @@
 ﻿using Italbytz.Ports.Exam.Networks;
+using Italbytz.Adapters.Exam.Networks.Graph;
 using NUnit.Framework;
 
 namespace Italbytz.Adapters.Exam.Networks.Tests
@@ -22,6 +23,15 @@ namespace Italbytz.Adapters.Exam.Networks.Tests
             {
                 System.Console.WriteLine(edge.ToString());
             }
+        }
+
+        [Test]
+        public void TestToGeometryGraph()
+        {
+            var parameters = new MinimumSpanningTreeParameters();
+            var graph = parameters.Graph;
+            var geometryGraph = graph.ToGeometryGraph();
+            Assert.NotNull(geometryGraph);
         }
     }
 }
