@@ -26,13 +26,18 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
             var nodes = new Dictionary<string, Node>();
             foreach (var edge in graph.Edges)
             {
+                Node? node = null;
                 if (!nodes.ContainsKey(edge.Source))
                 {
-                    nodes.Add(edge.Source, new Node(CurveFactory.CreateRectangle(nodeSize, nodeSize, new Point()), edge.Source));
+                    node = new Node(CurveFactory.CreateRectangle(nodeSize, nodeSize, new Point()), edge.Source);
+                    nodes.Add(edge.Source, node);
+                    geometryGraph.Nodes.Add(node);
                 }
                 if (!nodes.ContainsKey(edge.Target))
                 {
-                    nodes.Add(edge.Target, new Node(CurveFactory.CreateRectangle(nodeSize, nodeSize, new Point()), edge.Target));
+                    node = new Node(CurveFactory.CreateRectangle(nodeSize, nodeSize, new Point()), edge.Target);
+                    nodes.Add(edge.Target, node);
+                    geometryGraph.Nodes.Add(node);
                 }
                 geometryGraph.Edges.Add(new Edge(nodes[edge.Source], nodes[edge.Target])
                 {
