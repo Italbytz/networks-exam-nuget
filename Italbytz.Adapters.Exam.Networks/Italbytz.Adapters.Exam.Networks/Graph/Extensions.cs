@@ -45,7 +45,8 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
                     {
                         Width = labelWidth,
                         Height = labelHeight
-                    }
+                    },
+                    UserData = edge
                 });
             }
 
