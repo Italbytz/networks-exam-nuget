@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Italbytz.Ports.Exam.Networks;
 
 namespace Italbytz.Adapters.Exam.Networks.Graph
@@ -21,6 +22,14 @@ namespace Italbytz.Adapters.Exam.Networks.Graph
         public TVertex Source { get; set; }
 
         public TVertex Target { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is TaggedEdge<TVertex, TTag> edge &&
+                   EqualityComparer<TTag>.Default.Equals(Tag, edge.Tag) &&
+                   EqualityComparer<TVertex>.Default.Equals(Source, edge.Source) &&
+                   EqualityComparer<TVertex>.Default.Equals(Target, edge.Target);
+        }
 
         public override string ToString()
         {

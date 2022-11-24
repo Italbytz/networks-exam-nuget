@@ -33,5 +33,23 @@ namespace Italbytz.Adapters.Exam.Networks.Tests
             var geometryGraph = graph.ToGeometryGraph();
             Assert.NotNull(geometryGraph);
         }
+
+        [Test]
+        public void TestEdgeEquality()
+        {
+            var edge1 = new TaggedEdge<string, double>
+            {
+                Source = "A",
+                Target = "B",
+                Tag = 2
+            };
+            var edge2 = new TaggedEdge<string, double>
+            {
+                Source = "A",
+                Target = "B",
+                Tag = 2
+            };
+            Assert.AreEqual(edge1, edge2);
+        }
     }
 }
