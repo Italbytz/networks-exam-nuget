@@ -24,11 +24,16 @@ namespace Italbytz.Adapters.Exam.Networks
             {
                 if (vertex != "A" && tryGetPaths(vertex, out IEnumerable<QuikGraph.TaggedEdge<string, double>> path))
                 {
-                    var pathString = "";
+                    var pathString = "A";
+                    var cost = 0;
+                    var lastVertex = "A";
                     foreach (var edge in path)
                     {
-                        pathString += edge;
+                        cost += (int)edge.Tag;
+                        lastVertex = edge.GetOtherVertex(lastVertex);
+                        pathString += $" -> {lastVertex}";
                     }
+                    pathString += $" ({cost})";
                     paths.Add(pathString);
                 }
             }
